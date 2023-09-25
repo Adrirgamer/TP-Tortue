@@ -1,12 +1,10 @@
 import turtle
-s = turtle.getscreen()
-t = turtle.Turtle()
-t.speed(0) # maximum speed
-
-t.forward(100)
-t.left(90)
-t.forward(50)
-t.right(90)
-t.forward(100)
-
+def equ(longueur):
+    t = turtle.Turtle()
+    t.hideturtle()
+    for _ in range(3):
+        t.forward(longueur)
+        t.left(120)
+        t.hideturtle()
+equ(float(input("longueur:")))
 turtle.exitonclick()
