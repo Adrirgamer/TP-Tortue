@@ -13,6 +13,13 @@ def carre(longueur):
     for _ in range(4):
         t.forward(longueur)
         t.left(90)
+        
+def polygone(longueur, nb_cotes):
+    t.hideturtle()
+    for _ in range(nb_cotes):
+        t.forward(longueur)
+        t.left(360/nb_cotes)
+        
       
-carre(float(input("longueur:")))
+polygone(int(input("longueur:")), int(input("nb_cotes:")))
 turtle.exitonclick()
