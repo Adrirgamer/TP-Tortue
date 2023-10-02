@@ -9,38 +9,39 @@ def polygone(longueur, nb_cotes, soustrait):
         t.forward(int(longueur))
         t.left(360/nb_cotes)
 
-def spirograph(longueurinit, rotation, couleur, cran):
+def spirograph(longueur, rotation, couleur, soustrait, vitesse, nb_cotes):
     """longueurinit = longueur du coté inital,
        rotation = degré de rotation de chaque carré par rapport au précédent
        couleur = couleur du trait
        cran = différence de longueur a chaque coté tracé
+       vitesse : vitesse du tracé
+       cotés : cotés de chaque tracé (experimental
     """
-   # t.hideturtle()
-    for _ in range(360/int(rotation)):
+ 
+    while True:
+        t.hideturtle
+        t.speed(vitesse)
         t.color(couleur)
-        rotation = rotation + 360/int(rotation)
-        for _ in range(4):
-            longueurinit=longueurinit + int(cran)
-            t.forward(longueurinit)
-            t.right(rotation)
-
+        #t.left(rotation)  a commenter pour centrer la spirale
+        for _ in range(nb_cotes):
+            longueur = longueur - int(soustrait)
+            t.forward(int(longueur))
+            t.left(360/nb_cotes)
+            t.left(rotation) # centrer la spirale 
+        
 def equ(longueur):
     t.hideturtle()
-    for _ in range(3):
-        t.forward(longueur)
-        t.left(120)
+    polygone(longueur, 3)
 
 def carre(longueur):
     t.hideturtle()
-    for _ in range(4):
-        t.forward(longueur)
-        t.left(90)
+    polygone(longueur, 4)
 
 #carre(float(input("longueur:")))
 
 #equ(float(input("longueur:")))
         
-spirograph(int(input("longueur initiale : ")), int(input("rotation : ")), str(input("couleur : ")) , int(input("cran : ")))
+spirograph(int(input("longueur initiale : ")), float(input("rotation : ")), str(input("couleur : ")) , int(input("cran : ")), int(input("vitesse : ")), int(input("cotés : ")))
 
 #polygone(float(input("longueur : ")), int(input("nb_cotes : ")), int(input("soustrait : ")))
 
